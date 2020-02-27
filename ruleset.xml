@@ -4,4 +4,5 @@
     <description>
         This ruleset checks my code for bad stuff
     </description>
+	<rule ref="rulesets/java/imports.xml/DuplicateImports"/>
 </ruleset>
