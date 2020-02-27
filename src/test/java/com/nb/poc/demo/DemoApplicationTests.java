@@ -1,10 +1,9 @@
 package com.nb.poc.demo;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import java.net.URI;
 import java.net.URISyntaxException;
 
+import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.ResponseEntity;
@@ -23,16 +22,15 @@ class DemoApplicationTests {
 	 */
 	@Test
 	void contextLoads() throws URISyntaxException {
-		RestTemplate restTemplate = new RestTemplate();
+		final RestTemplate restTemplate = new RestTemplate();
 
 		final String baseUrl = "http://localhost:8080";
-		URI uri = new URI(baseUrl);
+		final URI uri = new URI(baseUrl);
 
-		ResponseEntity<String> result = restTemplate.getForEntity(uri, String.class);
+		final ResponseEntity<String> result = restTemplate.getForEntity(uri, String.class);
 
 		// Verify request succeed
-		assertEquals(200, result.getStatusCodeValue());
-		assertEquals(true, result.getBody().contains("employeeList"));
+		Assert.assertEquals("Checking HTTP Status", 200, result.getStatusCodeValue());
 	}
 
 }
