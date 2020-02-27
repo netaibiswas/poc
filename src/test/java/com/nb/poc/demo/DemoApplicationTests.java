@@ -17,11 +17,12 @@ import org.springframework.web.client.RestTemplate;
 class DemoApplicationTests {
 
 	/**
-	 * Dummy
+	 *
 	 * @throws URISyntaxException
 	 */
 	@Test
-	void contextLoads() throws URISyntaxException {
+	// Dummy Test
+	public void contextLoads() throws URISyntaxException {
 		final RestTemplate restTemplate = new RestTemplate();
 
 		final String baseUrl = "http://localhost:8080";
